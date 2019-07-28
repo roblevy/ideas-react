@@ -58,7 +58,7 @@ class NotesShow extends React.Component {
                 {editTitle ?
                     <input
                       name="title"
-                      className="is-size-6"
+                      className="title-input is-size-6"
                       value={note.title}
                       onChange={this.onChange}
                       onBlur={this.onSubmit}
@@ -66,7 +66,7 @@ class NotesShow extends React.Component {
                     />
                     :
                     <h3
-                      className="is-size-6"
+                      className="title-text is-size-6"
                       onClick={() => this.beginEditing('editTitle', this.titleRef)}
                     >{note.title}</h3>
                 }
