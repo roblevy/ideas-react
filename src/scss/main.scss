@@ -1,2 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
 
+$yellow: #F8EA87;
+
+$family-sans-serif: "Nunito", sans-serif;
+$primary: $yellow;
+$primary-invert: #000;
+
+@import 'bulma';

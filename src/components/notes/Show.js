@@ -17,7 +17,7 @@ class NotesShow extends React.Component {
       <div className="column">
         {
           note && (
-            <article className="box">
+            <article className="box has-background-primary">
               <h3 className="title is-2">{note.title}</h3>
               <div className="body">
                 <p>{note.body}</p>
