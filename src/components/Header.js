@@ -1,12 +1,70 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import classNames from 'classnames';
 
-const Header = () => (
-  <header>
-    <ul>
-      <li>Home</li>
-      <li>About</li>
-    </ul>
-  </header>
-)
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      headerIsActive: false
+    }
+    this.toggleHeader = this.toggleHeader.bind(this);
+  }
 
-export default Header;
+  toggleHeader() {
+    this.setState({
+      headerIsActive: !this.state.headerIsActive
+    })
+  }
+
+  render() {
+    return (
+      <header>
+        <nav
+          className='navbar'
+          role="navigation"
+          aria-label="main navigation"
+        >
+          <div className="navbar-brand">
+            <Link className="navbar-item" to="/">
+              A notes React app
+            </Link>
+
+            <a
+              role="button"
+              className={classNames({
+                'navbar-burger': true, 'burger': true,
+                'is-active': this.state.headerIsActive
+              })}
+              aria-label="menu"
+              aria-expanded="false"
+              onClick={this.toggleHeader}
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
+          <div className={classNames({
+            'navbar-menu': true,
+            'is-active': this.state.headerIsActive
+          })}>
+            <div className="navbar-start">
+              <Link to="/" className="navbar-item">
+                Home
+              </Link>
+
+              <Link to="/about" className="navbar-item">
+                About
+              </Link>
+
+            </div>
+
+          </div>
+        </nav>
+      </header>
+    );
+  }
+}
+
+export default withRouter(Header);

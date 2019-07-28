@@ -18,8 +18,11 @@ class NotesIndex extends React.Component {
     return (
       <React.Fragment>
         <h2>The notes index</h2>
-        {notes && notes.map(note => <NotesShow key={note.id} note={note} />)
-        }
+        <div className="columns">
+          {notes && notes.map(note =>
+              <NotesShow key={note.id} note={note} />)
+          }
+        </div>
       </React.Fragment>
 
     );
