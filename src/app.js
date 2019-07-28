@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from  'react-dom';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import NotesIndex from './components/notes/Index';
+
 class App extends React.Component {
   render() {
     return (
-      <h1>Welcome to React</h1>
+      <React.Fragment>
+        <Header />
+        <NotesIndex />
+        <Footer />
+      </React.Fragment>
+
     );
   }
 }
