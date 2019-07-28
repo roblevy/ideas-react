@@ -17,6 +17,14 @@ class Header extends React.Component {
     })
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({
+        headerIsActive: false
+      })
+    }
+  }
+
   render() {
     return (
       <header>
