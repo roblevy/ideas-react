@@ -18,7 +18,7 @@ class NotesShow extends React.Component {
       {
         note && (
           <article className="note">
-            <h3>{note.title}</h3>
+            <h3 className="title">{note.title}</h3>
             <div className="body">
               <p>{note.body}</p>
             </div>

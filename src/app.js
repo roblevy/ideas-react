@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from  'react-dom';
+import 'bulma/css/bulma.css';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
