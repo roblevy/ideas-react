@@ -14,17 +14,17 @@ class NotesShow extends React.Component {
   render() {
     const { note } = this.state;
     return (
-      <div>
-      {
-        note && (
-          <article className="box">
-            <h3 className="title">{note.title}</h3>
-            <div className="body">
-              <p>{note.body}</p>
-            </div>
-          </article>
-        )
-      }
+      <div className="column">
+        {
+          note && (
+            <article className="box">
+              <h3 className="title is-2">{note.title}</h3>
+              <div className="body">
+                <p>{note.body}</p>
+              </div>
+            </article>
+          )
+        }
       </div>
 
     );

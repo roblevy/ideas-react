@@ -17,7 +17,7 @@ class NotesIndex extends React.Component {
     const { notes } = this.state;
     return (
       <React.Fragment>
-        <h2>The notes index</h2>
+        <h2 className="title is-1">The notes index</h2>
         <div className="columns">
           {notes && notes.map(note =>
               <NotesShow key={note.id} note={note} />)

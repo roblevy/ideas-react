@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from  'react-dom';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './scss/main.scss';
 import 'bulma/css/bulma.css';
 
 import Header from './components/Header';
@@ -18,10 +19,12 @@ class App extends React.Component {
     return (
       <Router>
         <Header />
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/" component={NotesIndex} />
-        </Switch>
+        <main className="section">
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/" component={NotesIndex} />
+          </Switch>
+        </main>
         <Footer />
       </Router>
 

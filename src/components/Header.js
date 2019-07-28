@@ -29,7 +29,7 @@ class Header extends React.Component {
     return (
       <header>
         <nav
-          className='navbar'
+          className='navbar is-primary'
           role="navigation"
           aria-label="main navigation"
         >
