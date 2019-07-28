@@ -17,6 +17,10 @@ class NotesShow extends React.Component {
   componentDidMount() {
     this.setState({
       note: this.props.note
+    }, () => {
+      if (this.state.note.new) {
+        this.beginEditing('editTitle', this.titleRef);
+      }
     });
   }
 
@@ -59,10 +63,11 @@ class NotesShow extends React.Component {
                     <input
                       name="title"
                       className="title-input is-size-6"
-                      value={note.title}
+                      value={note.title || ''}
                       onChange={this.onChange}
                       onBlur={this.onSubmit}
                       ref={this.titleRef}
+                      placeholder="Note title"
                     />
                     :
                     <h3
@@ -83,7 +88,7 @@ class NotesShow extends React.Component {
                 <textarea
                   name="body"
                   className="body is-size-7"
-                  value={note.body}
+                  value={note.body || ''}
                   onChange={this.onChange}
                   onBlur={this.onSubmit}
                   ref={this.bodyRef}

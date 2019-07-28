@@ -34,6 +34,11 @@
           overflow-y: auto;
         }
       }
+      input:focus,textarea:focus {
+        outline: none;
+        border: 1px solid lightgrey;
+        background: none;
+      }
     }
   }
   .new-note {

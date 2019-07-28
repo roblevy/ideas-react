@@ -19,7 +19,7 @@ class NotesIndex extends React.Component {
   handleNewClick() {
     $http.get('/ideas/new')
       .then(res => this.setState({
-        notes: this.state.notes.concat([res.data])
+        notes: this.state.notes.concat([{ new: true, ...res.data }])
       }))
   }
 
