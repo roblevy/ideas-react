@@ -18,8 +18,12 @@
         white-space: nowrap;
         text-overflow: ellipsis;
       }
-      .body {
-        overflow-y: auto;
+      .message-body {
+        overflow: auto;
+        margin: 10px;
+        .body {
+          overflow-y: auto;
+        }
       }
     }
   }

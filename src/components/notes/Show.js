@@ -50,11 +50,11 @@ class NotesShow extends React.Component {
   render() {
     const { note, editTitle, editBody } = this.state;
     return (
-      <article className="note box has-background-primary">
+      <article className="box is-paddingless message note is-primary">
         {
           note && (
             <form onSubmit={this.onSubmit}>
-              <div className="level is-marginless">
+              <div className="message-header is-marginless">
                 {editTitle ?
                     <input
                       name="title"
@@ -78,21 +78,23 @@ class NotesShow extends React.Component {
                   ></button>
                 </div>
               </div>
-              {editBody ?
-                  <textarea
-                    name="body"
-                    className="body is-size-7"
-                    value={note.body}
-                    onChange={this.onChange}
-                    onBlur={this.onSubmit}
-                    ref={this.bodyRef}
-                  />
-                  :
-                  <p
-                    className="body is-size-7"
-                    onClick={() => this.beginEditing('editBody', this.bodyRef)}
-                  >{note.body}</p>
-              }
+              <div className="message-body is-paddingless">
+            {editBody ?
+                <textarea
+                  name="body"
+                  className="body is-size-7"
+                  value={note.body}
+                  onChange={this.onChange}
+                  onBlur={this.onSubmit}
+                  ref={this.bodyRef}
+                />
+                :
+                <p
+                  className="body is-size-7"
+                  onClick={() => this.beginEditing('editBody', this.bodyRef)}
+                >{note.body}</p>
+            }
+          </div>
             </form>
           )
         }
