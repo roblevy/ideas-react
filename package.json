@@ -5,9 +5,13 @@
   "repository": "git@github.com:roblevy/ideas-react.git",
   "author": "Rob Levy",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open"
+  },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
