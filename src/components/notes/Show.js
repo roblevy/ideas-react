@@ -25,7 +25,10 @@ class NotesShow extends React.Component {
   }
 
   onChange(event) {
-    const { name, value } = event.target;
+    let { name, value } = event.target;
+    if (name === 'body') {
+      value = value.substr(0, 139);
+    }
     this.setState({
       note: {
         ...this.state.note,
@@ -85,14 +88,17 @@ class NotesShow extends React.Component {
               </div>
               <div className="message-body is-paddingless">
             {editBody ?
-                <textarea
-                  name="body"
-                  className="body is-size-7"
-                  value={note.body || ''}
-                  onChange={this.onChange}
-                  onBlur={this.onSubmit}
-                  ref={this.bodyRef}
-                />
+                <div className="body-editing">
+                  <textarea
+                    name="body"
+                    className="body is-size-7"
+                    value={note.body || ''}
+                    onChange={this.onChange}
+                    onBlur={this.onSubmit}
+                    ref={this.bodyRef}
+                  />
+                  <p className="body-length">{139 - note.body.length}</p>
+                </div>
                 :
                 <p
                   className="body is-size-7"
