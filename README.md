@@ -1,5 +1,7 @@
 # Ideas/Notes in React
 
+![Screenshot](screenshot.png)
+
 This is a demonstration of a simple React app.
 
 It includes some of the standard setup, like Webpack and Babel, and also a CSS framework called <a href="https://bulma.io/" target="blank">Bulma</a>. 
