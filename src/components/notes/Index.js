@@ -59,21 +59,26 @@ class NotesIndex extends React.Component {
     const sortedNotes = this.sortNotes();
     return (
       <React.Fragment>
-        <h2 className="title is-1">The notes index</h2>
+        <h2 className="title">All your notes and ideas</h2>
+        <h3 className="subtitle">Click on the plus to add a note. Click on the title or the main area to edit.</h3>
+        <p>You can only write up to 139 characters in your notes, so make them succint!</p>
         <hr />
-        <div className="level">
-          <div className="level-left">
-            <p>Sorted by:</p>
-            <select
-              name="sort"
-              value={this.state.sortBy}
-              onChange={this.handleSortChange}
-            >
-              <option value="created_date|asc">Oldest first</option>
-              <option value="created_date|desc">Newest first</option>
-              <option value="title|asc">Title (A-Z)</option>
-              <option value="title|desc">Title (Z-A)</option>
-            </select>
+        <div class="field">
+          <label class="label" for="sort">Sorted by</label>
+          <div class="control">
+            <div class="select">
+              <select
+                name="sort"
+                value={this.state.sortBy}
+                onChange={this.handleSortChange}
+                className="select"
+              >
+                <option value="created_date|asc">Oldest first</option>
+                <option value="created_date|desc">Newest first</option>
+                <option value="title|asc">Title (A-Z)</option>
+                <option value="title|desc">Title (Z-A)</option>
+              </select>
+            </div>
           </div>
         </div>
         <div className="notes">

@@ -35,7 +35,7 @@ class Header extends React.Component {
         >
           <div className="navbar-brand">
             <Link className="navbar-item" to="/">
-              A notes React app
+              Note so simple
             </Link>
 
             <a
