@@ -16,12 +16,12 @@ class NotesIndex extends React.Component {
   }
 
   componentDidMount() {
-    $http.get('/ideas')
+    axios.get('/ideas')
       .then(res => this.setState({ notes: res.data }))
   }
 
   handleNewClick() {
-    $http.get('/ideas/new')
+    axios.get('/ideas/new')
       .then(res => this.setState({
         notes: this.state.notes.concat([{ new: true, ...res.data }]),
         sortBy: 'created-date|asc'
@@ -29,14 +29,14 @@ class NotesIndex extends React.Component {
   }
 
   handleDeleteClick(note) {
-    $http.post('/idea/delete', note)
-      .then(res => $http.get('/ideas'))
+    axios.post('/idea/delete', note)
+      .then(res => axios.get('/ideas'))
       .then(res => this.setState({ notes: res.data }));
   }
 
   handleEditSubmit(note) {
-    $http.post('/idea/update', note)
-      .then(res => $http.get('/ideas'))
+    axios.post('/idea/update', note)
+      .then(res => axios.get('/ideas'))
       .then(res => this.setState({ notes: res.data }));
   }
 

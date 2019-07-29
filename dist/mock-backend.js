@@ -92,23 +92,23 @@ const postRoute = (url, data) => {
   });
 }
 
-const $http = {
+const axios = {
   get: getRoute,
   post: postRoute
 };
 
 //// Testing the mock backend:
-// $http.get('/ideas/new')
+// axios.get('/ideas/new')
 //   .then(res => {
 //     console.log(res);
-//     $http.post('/idea/update', {
+//     axios.post('/idea/update', {
 //       id: res.data.id,
 //       title: 'Hello World',
 //       body: 'Hello'
 //     })
 //       .then(res => {
 //         console.log(res);
-//         $http.post('/idea/delete', {
+//         axios.post('/idea/delete', {
 //           id: res.data.id
 //         })
 //           .then(res => {
