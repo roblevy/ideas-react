@@ -8,6 +8,14 @@
     &:not(:last-child) {
       margin-right: 10px;
     }
+    .delete {
+      display: none;
+    }
+    &:hover {
+      .delete {
+        display: inherit;
+      }
+    }
     form {
       display: flex;
       flex-direction: column;

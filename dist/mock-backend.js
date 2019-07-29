@@ -13,13 +13,22 @@ class Memo {
 
 let CURRENT_ID = 0;
 const MEMOS = {};
-new Memo('In Xanadu did', 'Kubla Khan A stately pleasure-dome decree: ');
-new Memo('Where Alph, the','sacred river, ran Through caverns measureless to man' )
-new Memo('Down to a', 'sunless sea.  So twice five miles of fertile ground ');
-new Memo('With walls and', 'towers were girdled round; And there were gardens bright with sinuous rills,');
-new Memo('Where blossomed many', 'an incense-bearing tree; And here were forests ancient as the hills, Enfolding sunny spots of greenery.  But oh! that deep romantic chasm which slanted ');
-new Memo('Down the green', 'hill athwart a cedarn cover!  A savage place! as holy and enchanted ');
-new Memo('As e’er beneath', 'a waning moon was haunted By woman wailing for her demon-lover! ');
+function dummyMemo(title, body, n) {
+  window.setTimeout(() => {
+    new Memo(title, body);
+  }, n * 10);
+}
+dummyMemos = [
+  ['In Xanadu did', 'Kubla Khan A stately pleasure-dome decree: '],
+  ['Where Alph, the','sacred river, ran Through caverns measureless to man'],
+  ['Down to a', 'sunless sea.  So twice five miles of fertile ground '],
+  ['With walls and', 'towers were girdled round; And there were gardens bright with sinuous rills,'],
+  ['Where blossomed many', 'an incense-bearing tree; And here were forests ancient as the hills, Enfolding sunny spots of greenery.  But oh! that deep romantic chasm which slanted '],
+  ['Down the green', 'hill athwart a cedarn cover!  A savage place! as holy and enchanted '],
+  ['As e’er beneath', 'a waning moon was haunted By woman wailing for her demon-lover!'],
+]
+
+dummyMemos.forEach((m, i) => dummyMemo(m[0], m[1], i));
 
 const DELAY = 400;
 
