@@ -6,5 +6,15 @@ $family-sans-serif: "Nunito", sans-serif;
 $primary: $yellow;
 $primary-invert: #000;
 
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+main {
+  flex: 1 0 0;
+}
+
 @import 'notes';
 @import 'bulma';
