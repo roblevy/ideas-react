@@ -56,6 +56,7 @@ class NotesShow extends React.Component {
 
   render() {
     const { note, editTitle, editBody } = this.state;
+    const charsRemaining = note && 139 - note.body.length;
     return (
       <article className="box is-paddingless message note is-primary">
         {
@@ -97,7 +98,8 @@ class NotesShow extends React.Component {
                     onBlur={this.onSubmit}
                     ref={this.bodyRef}
                   />
-                  <p className="body-length">{139 - note.body.length}</p>
+                  {charsRemaining <= 15 &&
+                      <p className="body-length">{charsRemaining}</p> }
                 </div>
                 :
                 <p
